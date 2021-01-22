@@ -1,0 +1,29 @@
+<div class="main-container">
+  <div class="login-container" [formGroup]="formLogin">
+    <mat-form-field>
+      <mat-label>Nombre de la banda</mat-label>
+      <input matInput placeholder="Ex. Led Zeppelin" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>No. de Integrantes</mat-label>
+      <input type="number" matInput placeholder="4" formControlName="participants_number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre de una canción</mat-label>
+      <input matInput placeholder="Ex. Kashmir" formControlName="songName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Subgénero</mat-label>
+      <select matNativeControl formControlName="subgenre">
+        <option value="hard rock">Hard Rock</option>
+        <option value="rock clásico">Rock clásico</option>
+        <option value="trash metal">Trash Metal</option>
+        <option value="metal">Metal</option>
+      </select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled] = "formLogin.invalid" (click)="saveClick()">
+      Registrar
+    </button>
+  </div>
+</div>
+
